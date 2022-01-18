@@ -6,7 +6,7 @@ from music21 import *
 import argparse
 
 parser = argparse.ArgumentParser(description='Music iterators mxml conversion')
-parser.add_argument('file', type=str, help='Tiny notation string')
+parser.add_argument('file', type=str, help='file name')
 parser.add_argument('tinynotation', type=str, help='Tiny notation string')
 args = parser.parse_args()
 
