@@ -17,7 +17,7 @@ lilypond -dbackend=pdf -o ../out/ ../out/$1
 pdf2svg ../out/$1.pdf ../out/$1.svg    
 # remove temp files                 
 cd ../out && shopt -s extglob                           
-rm !("${1}.svg")                                        
+rm !(*.svg)                                        
 ```
 ---
 ### From 
