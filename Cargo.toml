@@ -16,3 +16,43 @@ path = "src/arpeggiators/up.rs"
 [[bin]]
 name = "down"
 path = "src/arpeggiators/down.rs"
+
+[[bin]]
+name = "down_up"
+path = "src/arpeggiators/down_up.rs"
+
+[[bin]]
+name = "up_down"
+path = "src/arpeggiators/up_down.rs"
+
+[[bin]]
+name = "converge"
+path = "src/arpeggiators/converge.rs"
+
+[[bin]]
+name = "diverge"
+path = "src/arpeggiators/diverge.rs"
+
+[[bin]]
+name = "down_and_up"
+path = "src/arpeggiators/down_and_up.rs"
+
+[[bin]]
+name = "up_and_down"
+path = "src/arpeggiators/up_and_down.rs"
+
+[[bin]]
+name = "pinky_up"
+path = "src/arpeggiators/pinky_up.rs"
+
+[[bin]]
+name = "pinky_up_down"
+path = "src/arpeggiators/pinky_up_down.rs"
+
+[[bin]]
+name = "thumb_up"
+path = "src/arpeggiators/thumb_up.rs"
+
+[[bin]]
+name = "thumb_up_down"
+path = "src/arpeggiators/thumb_up_down.rs"

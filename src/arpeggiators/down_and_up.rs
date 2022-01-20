@@ -15,13 +15,25 @@ fn main() {
 
     // DOWN&UP
     let down_and_up = get_notes(n)
-    .into_iter()
-    .rev()
-    .chain(
-        get_notes(n)
         .into_iter()
+        .rev()
+        .chain(get_notes(n).into_iter());
+
+    down_and_up
+        .clone()
+        .cycle()
+        .take(16)
+        .for_each(|n| n.send_midi(&mut conn_out, 150, 64));
+
+    println!(
+        "\"tinyNotation: 4/4 {}\"",
+        down_and_up
+            .clone()
+            .cycle()
+            .take(16)
+            .fold(String::new(), |acc, note| {
+                let octave_str = (0..note.octave - 3).map(|_| "'").collect::<String>();
+                acc + &format!("{:?}{octave_str}4", &note.letter).to_lowercase() + " "
+            })
     );
-
-    down_and_up.cycle().take(16).for_each(|n| n.send_midi(&mut conn_out, 150, 64)); 
-
 }

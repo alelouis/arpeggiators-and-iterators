@@ -16,7 +16,10 @@ fn main() {
     // UP
     let up = get_notes(n).into_iter();
 
-    //up.clone().cycle().take(16).for_each(|n| n.send_midi(&mut conn_out, 150, 64));
+    up.clone()
+        .cycle()
+        .take(16)
+        .for_each(|n| n.send_midi(&mut conn_out, 150, 64));
 
     println!(
         "\"tinyNotation: 4/4 {}\"",

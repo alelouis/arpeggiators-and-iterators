@@ -18,8 +18,23 @@ fn main() {
         .into_iter()
         .intersperse(get_notes(n)[0])
         .skip(1)
-        .take(2*(n-1));
+        .take(2 * (n - 1));
 
-    thumb_up.cycle().take(16).for_each(|n| n.send_midi(&mut conn_out, 150, 64)); 
+    thumb_up
+        .clone()
+        .cycle()
+        .take(16)
+        .for_each(|n| n.send_midi(&mut conn_out, 150, 64));
 
+    println!(
+        "\"tinyNotation: 4/4 {}\"",
+        thumb_up
+            .clone()
+            .cycle()
+            .take(16)
+            .fold(String::new(), |acc, note| {
+                let octave_str = (0..note.octave - 3).map(|_| "'").collect::<String>();
+                acc + &format!("{:?}{octave_str}4", &note.letter).to_lowercase() + " "
+            })
+    );
 }
