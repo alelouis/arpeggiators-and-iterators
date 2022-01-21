@@ -17,11 +17,8 @@ fn main() {
     let diverge = get_notes(n)
         .into_iter()
         .interleave(get_notes(n).into_iter().rev())
-        .take(n)
-        .clone()
-        .collect_vec()
-        .into_iter()
-        .rev();
+        .skip(n)
+        .take(n);
 
     diverge
         .clone()

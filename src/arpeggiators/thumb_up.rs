@@ -4,14 +4,14 @@ use mumuse::midi::{self, MidiSend};
 use mumuse::music::note::Note;
 use mumuse::music::scale::Scale;
 
+pub fn get_notes(n: usize) -> Vec<Note> {
+    Scale::major(Note::try_from("C3").unwrap()).two(n).notes
+}
+
 fn main() {
     // Open Midi output port connection
     let mut conn_out = midi::get_output_connection("Virtual Midi Bus 1".to_string());
     let n = 4;
-
-    pub fn get_notes(n: usize) -> Vec<Note> {
-        Scale::major(Note::try_from("C3").unwrap()).two(n).notes
-    }
 
     // THUMB UP
     let thumb_up = get_notes(n)
