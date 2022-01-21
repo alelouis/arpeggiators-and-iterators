@@ -1,5 +1,5 @@
-Working directory for upcoming blog article about arpeggiators built from iterators.
-**Still WIP**
+Working directory for upcoming article about arpeggiators built from iterators.
+Find it here: [alelouis.eu/blog/music-iterators/](https://alelouis.eu/blog/music-iterators/);
 
 ---
 
